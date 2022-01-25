@@ -1,0 +1,122 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: #e5e5e5;
+}
+
+/* Barra do topo do site */
+header{
+    width:100vw;
+    height:92px;
+    background-color: #CF2B2B;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    position:fixed;
+    top:0;
+    left: 0;
+}
+
+header div{
+    margin-left: 21px;
+}
+
+header h1{
+    font-family:righteous;
+    color: #ffffff;;
+    font-size: 44px;
+}
+
+header h2{
+    color:#ffffff;
+    margin-top:5px;
+}
+
+/* Conteúdo do site */
+main{
+    margin-top: 92px;
+    margin-left: 19px;
+    margin-bottom:107px;
+}
+
+section{
+    padding-top: 30px;
+
+}
+
+.titulo-da-secao{
+    font-size: 26px;
+    font-family: righteous;
+    color: #333333;
+    display: block;
+}
+
+.pratos{
+    height:216px;
+    margin-top:17px;
+    display:flex;
+    overflow-x: scroll;
+}
+
+.prato{
+    margin-right: 16px;
+    width: 172px;
+    background-color: #ffffff;
+    display: flex;
+    border-radius: 9px;
+    
+}
+
+.prato div{
+    width:144px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin: 0 14px;
+}
+
+.prato div img{
+    width: 144px;
+    height: 87px;
+}
+
+.nome-do-prato{
+    font-size: 16px;
+    font-weight: 700;
+    color:#333333;
+}
+
+.descricao-do-prato{
+    font-size: 15px;
+    font-weight: 300;
+    color:#A6A6A6;
+    line-height: 17px;
+}
+
+.preco-do-prato{
+    font-weight: 500;
+    font-size: 16px;
+}
+
+/* Footer do site */
+footer{
+    width: 100vw;
+    height: 92px;
+    background-color: #ffffff;
+    position: fixed;
+    bottom:0;
+    left:0;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+
+footer input{
+    width:364px;
+    height: 61px;
+    background-color: #CBCBCB;
+    border-radius: 50px;
+}
