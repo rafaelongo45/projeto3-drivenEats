@@ -18,6 +18,8 @@ header{
     position:fixed;
     top:0;
     left: 0;
+    box-shadow: 0 3px 7px gray;
+    z-index: 1;
 }
 
 header div{
@@ -37,14 +39,11 @@ header h2{
 
 /* Conteúdo do site */
 main{
-    margin-top: 92px;
-    margin-left: 19px;
-    margin-bottom:107px;
+    margin: 92px 0 107px 19px;
 }
 
 section{
     padding-top: 30px;
-
 }
 
 .titulo-da-secao{
@@ -55,30 +54,40 @@ section{
 }
 
 .pratos{
-    height:216px;
+    height:230px;
     margin-top:17px;
     display:flex;
     overflow-x: scroll;
 }
 
-.prato{
+.icone-nao-selecionado{
+    display:none;
+}
+
+
+.item{
+    height: 216px;
     margin-right: 16px;
-    width: 172px;
+    min-width: 172px;
     background-color: #ffffff;
     display: flex;
+    align-items: center;
+    justify-content: center;
     border-radius: 9px;
-    
+    box-shadow: 0 0 5px -4px grey;
 }
 
-.prato div{
-    width:144px;
+.prato{
+    width: 144px;
+    height: 185px;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
-    margin: 0 14px;
+    justify-content: space-between;
+    background-color: #ffffff;
+    position:relative;
 }
 
-.prato div img{
+.prato img{
     width: 144px;
     height: 87px;
 }
@@ -101,6 +110,21 @@ section{
     font-size: 16px;
 }
 
+/* Seleção de Item */
+.item-selecionado{
+    border: solid 5px #32B72F;
+    box-shadow: 0 3px 7px gray;
+}
+
+.icone-selecionado{
+    display:block;
+    color: #32B72F;
+    position:absolute;
+    right:0;
+    bottom:0;
+    font-size: 20px;
+}
+
 /* Footer do site */
 footer{
     width: 100vw;
@@ -114,9 +138,20 @@ footer{
     justify-content: center;
 }
 
-footer input{
+footer button{
     width:364px;
     height: 61px;
     background-color: #CBCBCB;
     border-radius: 50px;
+    border: 0;
+    display:flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+button span{
+    color:#ffffff;
+    font-size: 20px;
+    width:200px;
 }
