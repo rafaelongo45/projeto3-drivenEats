@@ -2,6 +2,9 @@ let pratoSelecionado = 0;
 let bebidaSelecionada = 0;
 let sobremesaSelecionada = 0;
 
+let nomeCliente = null;
+let enderecoCliente =null;
+
 let nomePrato = null;
 let valorPrato = null;
 let pratoNumero = null;
@@ -85,7 +88,7 @@ function selecionarBebida(itemEscolhido) {
 
     nomeBebida = bebidaNome.innerHTML;
     valorBebida= bebidaPreco.innerHTML;
-    let bebidaString = valorBebida.substring(3,valorPrato.length)
+    let bebidaString = valorBebida.substring(3,valorBebida.length)
     bebidaNumero = parseFloat(bebidaString.replace(',', '.'))
 
     bebidaSelecionada = 1;
@@ -125,7 +128,7 @@ function selecionarSobremesa(itemEscolhido) {
 
     nomeSobremesa = sobremesaNome.innerHTML;
     valorSobremesa= sobremesaPreco.innerHTML;
-    let sobremesaString = valorSobremesa.substring(3,valorPrato.length)
+    let sobremesaString = valorSobremesa.substring(3,valorSobremesa.length)
     sobremesaNumero = parseFloat(sobremesaString.replace(',', '.'))
 
     sobremesaSelecionada = 1;
@@ -141,11 +144,54 @@ function selecionarSobremesa(itemEscolhido) {
     }
 }
 
-function clicouBotao(){
+function telaConfirmacao(){
     valorTotal = pratoNumero + bebidaNumero + sobremesaNumero;  
     valorTotal = valorTotal.toFixed(2);
     
-    let uri  = "Olá, gostaria de fazer o pedido: \n- Prato: " + nomePrato + "\n- Bebida: " + nomeBebida + "\n- Sobremesa: " + nomeSobremesa + "\nTotal: R$ " + valorTotal;
+    let fundoTransparente = document.querySelector('.tela-branca');
+    fundoTransparente.classList.add('tela-confirmacao');
+
+
+    let caixaConfirma = document.querySelector('.caixa');
+    caixaConfirma.classList.add('confirmacao');
+
+    let escolhePrato = document.querySelector('.prato-nome');
+    escolhePrato.innerHTML = nomePrato;
+
+    let escolheBebida = document.querySelector('.bebida-nome');
+    escolheBebida.innerHTML = nomeBebida;
+
+    let escolheSobremesa = document.querySelector('.sobremesa-nome');
+    escolheSobremesa.innerHTML = nomeSobremesa;
+
+    let precoPrato = document.querySelector('.prato-preco');
+    precoPrato.innerHTML = valorPrato;
     
-    window.location = 'https://wa.me/5521999999999?text=' + encodeURIComponent(uri);
+    let precoBebida = document.querySelector('.bebida-preco');
+    precoBebida.innerHTML = valorBebida;
+    
+    let precoSobremesa = document.querySelector('.sobremesa-preco');
+    precoSobremesa.innerHTML = valorSobremesa;
+
+    let precoTudo = document.querySelector('.preco-total');
+    precoTudo.innerHTML = "R$ " + valorTotal;
+}
+
+function clicouBotao(){
+
+    nomeCliente = prompt("Qual é o seu Nome?");
+    enderecoCliente = prompt("E qual é o seu endereço?")
+    
+    let uri  = "Olá, gostaria de fazer o pedido: \n- Prato: " + nomePrato + "\n- Bebida: " + nomeBebida + "\n- Sobremesa: " + nomeSobremesa + "\nTotal: R$ " + valorTotal + 
+    "\n \n Nome: " + nomeCliente + "\n Endereço: " + enderecoCliente;
+    
+    window.location = 'https://wa.me/5521996849420?text=' + encodeURIComponent(uri);
+}
+
+function cancelaCompra(){
+    let fundoTransparente = document.querySelector('.tela-branca');
+    fundoTransparente.classList.remove('tela-confirmacao');
+
+    let caixaConfirma = document.querySelector('.caixa');
+    caixaConfirma.classList.remove('confirmacao');
 }

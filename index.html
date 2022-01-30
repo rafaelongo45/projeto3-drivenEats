@@ -168,9 +168,26 @@
     <!--Barra do fim do site-->
     <footer>
         <div>
-            <button class = 'botao' onclick = 'clicouBotao()'> <span class = 'mensagem'>Selecione os 3 itens para fechar o pedido</span> </button>
+            <button class = 'botao' onclick = 'telaConfirmacao()'> <span class = 'mensagem'>Selecione os 3 itens para fechar o pedido</span> </button>
         </div>
     </footer>
+
+    <!-- Tela de confirmação-->
+    <section class = "tela-branca"> <!--adicionar classe tela-confirmacao-->
+        <div class = "caixa"> <!--adicionar classe confirmacao-->
+            <div class = "caixa-dentro">
+                <h1>Confirme seu pedido</h1>
+                <div class = 'informacoes-pedido'>
+                    <h2><span class = 'prato-nome'></span> <span class = 'prato-preco'>1000</span></h2>
+                    <h2><span class = 'bebida-nome'></span> <span class = 'bebida-preco'>1022</span></h2>
+                    <h2><span class = 'sobremesa-nome'></span> <span class = 'sobremesa-preco'>1064</span></h2>
+                    <h2> <span class = 'preco-nome'>TOTAL</span>  <span class = 'preco-total'> 1000</span></h2>
+                </div>
+                <button class = 'botao-confirma' onclick="clicouBotao()"><span>Tudo certo, pode pedir!</span></button>
+                <button class = 'botao-cancela' onclick = "cancelaCompra()">Cancelar</button>
+            </div>
+        </div>
+    </section>
 
     <script src="./script.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
