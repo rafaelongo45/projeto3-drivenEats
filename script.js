@@ -165,27 +165,26 @@ function telaConfirmacao(){
     escolheSobremesa.innerHTML = nomeSobremesa;
 
     let precoPrato = document.querySelector('.prato-preco');
-    precoPrato.innerHTML = valorPrato;
+    precoPrato.innerHTML = valorPrato.substring(3,valorPrato.length);
     
     let precoBebida = document.querySelector('.bebida-preco');
-    precoBebida.innerHTML = valorBebida;
+    precoBebida.innerHTML = valorBebida.substring(3,valorBebida.length);
     
     let precoSobremesa = document.querySelector('.sobremesa-preco');
-    precoSobremesa.innerHTML = valorSobremesa;
+    precoSobremesa.innerHTML = valorSobremesa.substring(3,valorSobremesa.length);
 
     let precoTudo = document.querySelector('.preco-total');
-    precoTudo.innerHTML = "R$ " + valorTotal;
+    precoTudo.innerHTML = "R$ " + valorTotal.replace('.', ',');
 }
 
 function clicouBotao(){
-
     nomeCliente = prompt("Qual é o seu Nome?");
     enderecoCliente = prompt("E qual é o seu endereço?")
     
     let uri  = "Olá, gostaria de fazer o pedido: \n- Prato: " + nomePrato + "\n- Bebida: " + nomeBebida + "\n- Sobremesa: " + nomeSobremesa + "\nTotal: R$ " + valorTotal + 
     "\n \n Nome: " + nomeCliente + "\n Endereço: " + enderecoCliente;
     
-    window.location = 'https://wa.me/5521996849420?text=' + encodeURIComponent(uri);
+    window.location = 'https://wa.me/5521999999999?text=' + encodeURIComponent(uri);
 }
 
 function cancelaCompra(){

@@ -180,6 +180,7 @@ footer{
     z-index: 3;
     top:0;
     background-color: rgba(255,255,255, 0.7);
+    display:flex;
 }
 
 .caixa{
@@ -195,13 +196,10 @@ footer{
     align-items: center;
     justify-content: center;
     border-radius: 3%;
-    position:absolute;
-    top:27vh;
-    left:2vw
 }
 
 .caixa-dentro{
-    width:332px;
+    width: 332px;
     height: 90%;
     margin: auto;
     display:flex;
